@@ -1,14 +1,16 @@
-# Welcome to your Lovable project
+# Heartmanship Refresh
+
+Ayudame a renovar la pagina web de acuerdo al contenido del documento. La pagina web actual es esta: https://heartmanship.com/ respeta los colores y la imagen de la marca. La pagina debe de ser responsiva para que se ajuste correctamente a cualquier dispositivo.
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/a422dc11-1c5f-46db-b8e8-876ab3e71f7b).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +22,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
