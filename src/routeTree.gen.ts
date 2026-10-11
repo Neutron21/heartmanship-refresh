@@ -10,33 +10,80 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AprendizajeRouteImport } from './routes/aprendizaje'
+import { Route as ContactoRouteImport } from './routes/contacto'
+import { Route as CursosRouteImport } from './routes/cursos'
+import { Route as SobreHeartmanshipRouteImport } from './routes/sobre-heartmanship'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AprendizajeRoute = AprendizajeRouteImport.update({
+  id: '/aprendizaje',
+  path: '/aprendizaje',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactoRoute = ContactoRouteImport.update({
+  id: '/contacto',
+  path: '/contacto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CursosRoute = CursosRouteImport.update({
+  id: '/cursos',
+  path: '/cursos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreHeartmanshipRoute = SobreHeartmanshipRouteImport.update({
+  id: '/sobre-heartmanship',
+  path: '/sobre-heartmanship',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aprendizaje': typeof AprendizajeRoute
+  '/contacto': typeof ContactoRoute
+  '/cursos': typeof CursosRoute
+  '/sobre-heartmanship': typeof SobreHeartmanshipRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aprendizaje': typeof AprendizajeRoute
+  '/contacto': typeof ContactoRoute
+  '/cursos': typeof CursosRoute
+  '/sobre-heartmanship': typeof SobreHeartmanshipRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aprendizaje': typeof AprendizajeRoute
+  '/contacto': typeof ContactoRoute
+  '/cursos': typeof CursosRoute
+  '/sobre-heartmanship': typeof SobreHeartmanshipRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/aprendizaje' | '/contacto' | '/cursos' | '/sobre-heartmanship'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/aprendizaje' | '/contacto' | '/cursos' | '/sobre-heartmanship'
+  id:
+    | '__root__'
+    | '/'
+    | '/aprendizaje'
+    | '/contacto'
+    | '/cursos'
+    | '/sobre-heartmanship'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AprendizajeRoute: typeof AprendizajeRoute
+  ContactoRoute: typeof ContactoRoute
+  CursosRoute: typeof CursosRoute
+  SobreHeartmanshipRoute: typeof SobreHeartmanshipRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +95,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/aprendizaje': {
+      id: '/aprendizaje'
+      path: '/aprendizaje'
+      fullPath: '/aprendizaje'
+      preLoaderRoute: typeof AprendizajeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contacto': {
+      id: '/contacto'
+      path: '/contacto'
+      fullPath: '/contacto'
+      preLoaderRoute: typeof ContactoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cursos': {
+      id: '/cursos'
+      path: '/cursos'
+      fullPath: '/cursos'
+      preLoaderRoute: typeof CursosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre-heartmanship': {
+      id: '/sobre-heartmanship'
+      path: '/sobre-heartmanship'
+      fullPath: '/sobre-heartmanship'
+      preLoaderRoute: typeof SobreHeartmanshipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AprendizajeRoute: AprendizajeRoute,
+  ContactoRoute: ContactoRoute,
+  CursosRoute: CursosRoute,
+  SobreHeartmanshipRoute: SobreHeartmanshipRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
